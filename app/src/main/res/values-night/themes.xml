@@ -1,16 +1,51 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.TodoApplication" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+    <style name="Theme.TodoApplication" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimaryNight</item>
+        <item name="colorOnPrimary">@color/colorOnPrimaryNight</item>
+        <item name="colorPrimaryContainer">@color/colorPrimaryContainerNight</item>
+        <item name="colorOnPrimaryContainer">@color/colorOnPrimaryContainerNight</item>
+
+        <item name="colorSecondary">@color/colorSecondaryNight</item>
+        <item name="colorOnSecondary">@color/colorOnSecondaryNight</item>
+        <item name="colorSecondaryContainer">@color/colorSecondaryContainerNight</item>
+        <item name="colorOnSecondaryContainer">@color/colorOnSecondaryContainerNight</item>
+
+        <item name="colorTertiary">@color/colorTertiaryNight</item>
+        <item name="colorOnTertiary">@color/colorOnTertiaryNight</item>
+        <item name="colorTertiaryContainer">@color/colorTertiaryContainerNight</item>
+        <item name="colorOnTertiaryContainer">@color/colorOnTertiaryContainerNight</item>
+
+        <item name="colorError">@color/colorErrorNight</item>
+        <item name="colorOnError">@color/colorOnErrorNight</item>
+        <item name="colorErrorContainer">@color/colorErrorContainerNight</item>
+        <item name="colorOnErrorContainer">@color/colorOnErrorContainerNight</item>
+
+        <item name="colorSurface">@color/colorSurfaceNight</item>
+        <item name="colorOnSurface">@color/colorOnSurfaceNight</item>
+        <item name="colorSurfaceVariant">@color/colorSurfaceVariantNight</item>
+        <item name="colorOnSurfaceVariant">@color/colorOnSurfaceVariantNight</item>
+
+        <item name="colorOutline">@color/colorOutlineNight</item>
+
+        <item name="android:colorBackground">?attr/colorSurfaceVariant</item>
+        <item name="colorOnBackground">?attr/colorOnSurfaceVariant</item>
+
+        <item name="android:statusBarColor">?attr/colorSurface</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <item name="bottomNavigationStyle">@style/BottomNavigationViewStyle</item>
+        <item name="collapsingToolbarLayoutMediumStyle">@style/CollapsingAppBarTheme</item>
+    </style>
+
+    <style name="BottomNavigationViewStyle" parent="Widget.Material3.BottomNavigationView">
+        <item name="backgroundTint">@color/colorSurfaceVariantNight</item>
+        <item name="menu">@menu/bottom_navigation_menu</item>
+    </style>
+
+    <style name="CollapsingAppBarTheme" parent="Widget.Material3.CollapsingToolbar.Medium">
+        <item name="android:background">@color/colorSurfaceVariantNight</item>
     </style>
 </resources>

@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">TodoApplication</string>
+    <string name="my_tasks">My tasks</string>
+    <string name="home">Home</string>
+
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam leo mi, interdum id mauris vitae, posuere mollis justo. Ut sit amet leo metus. Vivamus eget ultrices neque. Duis finibus tincidunt commodo. Ut venenatis blandit massa eget malesuada. Duis molestie nisi ut auctor blandit. Suspendisse felis est, elementum in elementum sit amet, iaculis in ex. Nulla efficitur a sapien eget placerat.
+
+Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec faucibus est sit amet sapien ullamcorper, sit amet finibus ante laoreet. Pellentesque sit amet pretium erat. Cras pellentesque risus convallis magna molestie, a scelerisque nisi molestie. Donec et odio non lectus ullamcorper imperdiet eget a mi. Morbi cursus est ligula, in suscipit neque venenatis porta. Praesent tempor at velit ac commodo. Ut efficitur, nibh a semper condimentum, ipsum turpis finibus diam, at sodales mauris tellus ut magna. In hac habitasse platea dictumst. Vestibulum ultricies dui sit amet est bibendum rhoncus. Vestibulum auctor ultrices enim ut ornare. In sit amet faucibus est. Donec placerat sit amet arcu at aliquam.
+
+Nullam ut tellus molestie elit molestie vulputate vitae sit amet urna. Pellentesque feugiat libero quis ante pretium, et efficitur justo ornare. Phasellus id elit eu arcu ultrices gravida non ac arcu. Quisque volutpat, diam sit amet sodales scelerisque, dui lorem vehicula libero, et dignissim ex nunc vitae orci. Sed sagittis in magna vel auctor. Phasellus efficitur sapien quis venenatis venenatis. Sed ac urna commodo, semper magna vulputate, auctor diam. In sagittis scelerisque ex, eget tristique ante mattis faucibus. Nullam finibus ex justo. Integer ornare ac justo at vulputate. Maecenas dui nisl, consequat in vestibulum in, facilisis sed orci. Phasellus auctor semper felis, ac faucibus sem gravida eget. Donec luctus id neque at sollicitudin. Vivamus fermentum vel purus vitae interdum. In a dictum eros.
+
+Suspendisse dapibus nisl ac tincidunt condimentum. Vivamus vel ultricies leo, at consectetur elit. Donec luctus orci vitae lacinia fermentum. Nullam hendrerit lectus nibh, pharetra commodo erat euismod eu. Ut tincidunt viverra nisl, eu eleifend massa iaculis quis. Integer sed augue et mauris aliquam elementum. Praesent congue nunc at nulla rutrum, quis facilisis orci imperdiet. Cras posuere elementum mi, sed pulvinar libero euismod non. Nunc commodo quis neque in aliquet. Praesent eget ante vitae elit tristique porta. Ut ut eros lorem. Aenean euismod lectus ex, vitae efficitur nunc tempus eget.
+
+Nullam sagittis urna purus, nec consectetur dui feugiat nec. Cras et blandit lectus. Curabitur semper massa sit amet facilisis tempor. Fusce pharetra nisi non nulla congue, in interdum risus fringilla. Pellentesque at euismod risus. Phasellus pulvinar risus ac ante iaculis, sit amet aliquet lorem cursus. Vestibulum aliquam elementum dictum. Nam non feugiat sem. Maecenas iaculis blandit ante ut fringilla. In quis ante dui. In vitae ex imperdiet, congue orci aliquet, consectetur nisl. Vestibulum aliquam tortor non ultrices laoreet. Pellentesque eu purus non nunc congue luctus. Etiam dui ante, euismod eget mollis quis, rhoncus a ex.
+
+Donec lorem nulla, hendrerit eget erat cursus, varius aliquet ante. Mauris lorem orci, mollis id tellus vel, semper scelerisque nunc. Nullam consequat.</string>
 </resources>
