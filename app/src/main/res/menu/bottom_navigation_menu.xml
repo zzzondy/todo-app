@@ -4,4 +4,14 @@
         android:id="@+id/navigation_todoListFragment"
         android:icon="@drawable/ic_round_home"
         android:title="@string/home" />
+
+    <item
+        android:id="@+id/navigation_toBuyFragment"
+        android:icon="@drawable/ic_round_shopping_cart"
+        android:title="@string/to_buy" />
+
+    <item
+        android:id="@+id/navigation_profileFragment"
+        android:icon="@drawable/ic_round_person"
+        android:title="@string/profile" />
 </menu>

@@ -9,5 +9,30 @@
         android:id="@+id/navigation_todoListFragment"
         android:name="com.todoapplication.presentation.fragments.todoList.TodoListFragment"
         android:label="fragment_todo_list"
-        tools:layout="@layout/fragment_todo_list" />
+        tools:layout="@layout/fragment_todo_list" >
+        <action
+            android:id="@+id/action_navigation_todoListFragment_to_addEditTaskFragment"
+            app:destination="@id/navigation_addEditTaskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_toBuyFragment"
+        android:name="com.todoapplication.presentation.fragments.toBuy.ToBuyFragment"
+        android:label="fragment_to_buy"
+        tools:layout="@layout/fragment_to_buy" />
+    <fragment
+        android:id="@+id/navigation_profileFragment"
+        android:name="com.todoapplication.presentation.fragments.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/navigation_addEditTaskFragment"
+        android:name="com.todoapplication.presentation.fragments.addOrEditTask.AddEditTaskFragment"
+        android:label="fragment_add_edit_task"
+        tools:layout="@layout/fragment_add_edit_task" >
+        <argument
+            android:name="task"
+            app:argType="com.todoapplication.domain.models.Task"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
 </navigation>

@@ -6,7 +6,7 @@ import com.todoapplication.data.util.toTask
 import com.todoapplication.domain.models.Task
 import com.todoapplication.domain.repository.TaskRepository
 
-class TaskRepositoryImpl(val taskDatabaseRepository: TaskDatabaseRepository) : TaskRepository {
+class TaskRepositoryImpl(private val taskDatabaseRepository: TaskDatabaseRepository) : TaskRepository {
 
     override suspend fun getUnExecutedTasks(): List<Task> {
         return taskDatabaseRepository.getUnExecutedTasks()

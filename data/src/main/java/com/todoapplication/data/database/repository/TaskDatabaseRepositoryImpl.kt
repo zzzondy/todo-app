@@ -2,8 +2,9 @@ package com.todoapplication.data.database.repository
 
 import com.todoapplication.data.database.TaskDatabase
 import com.todoapplication.data.database.models.DatabaseTask
+import javax.inject.Inject
 
-class TaskDatabaseRepositoryImpl(val database: TaskDatabase) : TaskDatabaseRepository {
+class TaskDatabaseRepositoryImpl(private val database: TaskDatabase) : TaskDatabaseRepository {
     override suspend fun getUnExecutedTasks(): List<DatabaseTask> {
         return database.taskDao.getUnExecutedTasks()
     }

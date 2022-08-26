@@ -9,6 +9,8 @@ import javax.inject.Scope
 @AppScope
 interface AppComponent {
 
+    fun featureComponent(): FeatureComponent.Factory
+
     @Component.Factory
     interface Factory {
         fun create(@BindsInstance context: Context): AppComponent

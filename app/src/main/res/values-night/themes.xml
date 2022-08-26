@@ -38,14 +38,22 @@
 
         <item name="bottomNavigationStyle">@style/BottomNavigationViewStyle</item>
         <item name="collapsingToolbarLayoutMediumStyle">@style/CollapsingAppBarTheme</item>
+        <item name="materialDividerStyle">@style/MaterialDividerTheme</item>
     </style>
 
     <style name="BottomNavigationViewStyle" parent="Widget.Material3.BottomNavigationView">
         <item name="backgroundTint">@color/colorSurfaceVariantNight</item>
         <item name="menu">@menu/bottom_navigation_menu</item>
+        <item name="itemRippleColor">@android:color/transparent</item>
     </style>
 
     <style name="CollapsingAppBarTheme" parent="Widget.Material3.CollapsingToolbar.Medium">
         <item name="android:background">@color/colorSurfaceVariantNight</item>
+    </style>
+
+    <style name="MaterialDividerTheme" parent="Widget.Material3.MaterialDivider">
+        <item name="dividerInsetStart">8dp</item>
+        <item name="dividerInsetEnd">8dp</item>
+        <item name="thickness">1dp</item>
     </style>
 </resources>

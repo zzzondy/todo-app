@@ -2,6 +2,9 @@
     <string name="app_name">TodoApplication</string>
     <string name="my_tasks">My tasks</string>
     <string name="home">Home</string>
+    <string name="to_buy">To buy</string>
+    <string name="profile">Profile</string>
+    <string name="no_tasks">No scheduled</string>
 
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam leo mi, interdum id mauris vitae, posuere mollis justo. Ut sit amet leo metus. Vivamus eget ultrices neque. Duis finibus tincidunt commodo. Ut venenatis blandit massa eget malesuada. Duis molestie nisi ut auctor blandit. Suspendisse felis est, elementum in elementum sit amet, iaculis in ex. Nulla efficitur a sapien eget placerat.
 
@@ -14,4 +17,5 @@ Suspendisse dapibus nisl ac tincidunt condimentum. Vivamus vel ultricies leo, at
 Nullam sagittis urna purus, nec consectetur dui feugiat nec. Cras et blandit lectus. Curabitur semper massa sit amet facilisis tempor. Fusce pharetra nisi non nulla congue, in interdum risus fringilla. Pellentesque at euismod risus. Phasellus pulvinar risus ac ante iaculis, sit amet aliquet lorem cursus. Vestibulum aliquam elementum dictum. Nam non feugiat sem. Maecenas iaculis blandit ante ut fringilla. In quis ante dui. In vitae ex imperdiet, congue orci aliquet, consectetur nisl. Vestibulum aliquam tortor non ultrices laoreet. Pellentesque eu purus non nunc congue luctus. Etiam dui ante, euismod eget mollis quis, rhoncus a ex.
 
 Donec lorem nulla, hendrerit eget erat cursus, varius aliquet ante. Mauris lorem orci, mollis id tellus vel, semper scelerisque nunc. Nullam consequat.</string>
+    <string name="info_button">Info Button</string>
 </resources>

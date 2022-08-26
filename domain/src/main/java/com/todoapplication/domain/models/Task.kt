@@ -1,5 +1,7 @@
 package com.todoapplication.domain.models
 
+import java.io.Serializable
+
 data class Task(
     val id: Long,
     val text: String,
@@ -8,4 +10,4 @@ data class Task(
     val dateOfCreation: Long,
     val dateOfModified: Long,
     val deadline: Long? = null
-)
+) : Serializable

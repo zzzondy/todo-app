@@ -1,5 +1,7 @@
 package com.todoapplication.domain.models
 
-enum class Importance {
+import java.io.Serializable
+
+enum class Importance : Serializable {
     LOW, MEDIUM, IMMEDIATE
 }
