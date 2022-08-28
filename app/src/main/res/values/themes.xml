@@ -39,7 +39,9 @@
 
         <item name="bottomNavigationStyle">@style/BottomNavigationViewStyle</item>
         <item name="collapsingToolbarLayoutMediumStyle">@style/CollapsingAppBarTheme</item>
-        <item name="materialDividerStyle">@style/MaterialDividerTheme</item>
+
+        <item name="actionMenuTextAppearance">@style/MenuTextStyle</item>
+        <item name="actionMenuTextColor">?attr/colorPrimary</item>
     </style>
 
     <style name="BottomNavigationViewStyle" parent="Widget.Material3.BottomNavigationView">
@@ -52,9 +54,15 @@
         <item name="android:background">@color/colorSurfaceVariantLight</item>
     </style>
 
-    <style name="MaterialDividerTheme" parent="Widget.Material3.MaterialDivider">
-        <item name="dividerInsetStart">8dp</item>
-        <item name="dividerInsetEnd">8dp</item>
-        <item name="thickness">1dp</item>
+    <style name="AddOrEditToolbarStyle" parent="Widget.Material3.Toolbar">
+        <item name="navigationIconTint">?attr/colorPrimary</item>
+        <item name="navigationIcon">@drawable/ic_close</item>
+        <item name="menu">@menu/add_edit_task_menu</item>
+        <item name="android:background">?attr/colorSurfaceVariant</item>
+        <item name="android:actionMenuTextColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="MenuTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Menu">
+        <item name="android:textSize">16sp</item>
     </style>
 </resources>

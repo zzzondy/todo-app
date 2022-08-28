@@ -2,6 +2,7 @@ package com.todoapplication.data.repository
 
 import com.todoapplication.data.database.repository.TaskDatabaseRepository
 import com.todoapplication.data.util.toDatabaseTask
+import com.todoapplication.data.util.toDatabaseTaskWithId
 import com.todoapplication.data.util.toTask
 import com.todoapplication.domain.models.Task
 import com.todoapplication.domain.repository.TaskRepository
@@ -26,6 +27,6 @@ class TaskRepositoryImpl(private val taskDatabaseRepository: TaskDatabaseReposit
     }
 
     override suspend fun editTask(task: Task) {
-        taskDatabaseRepository.editTask(task.toDatabaseTask())
+        taskDatabaseRepository.editTask(task.toDatabaseTaskWithId())
     }
 }

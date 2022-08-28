@@ -9,7 +9,7 @@ import com.todoapplication.data.database.models.DatabaseTask
 @Dao
 interface TaskDao {
 
-    @Query("SELECT * FROM task_list WHERE NOT executed ORDER BY date_of_modified ASC")
+    @Query("SELECT * FROM task_list WHERE NOT executed ORDER BY date_of_creation ASC")
     fun getUnExecutedTasks(): List<DatabaseTask>
 
     @Insert

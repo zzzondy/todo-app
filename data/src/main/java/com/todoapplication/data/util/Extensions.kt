@@ -28,6 +28,18 @@ internal fun Task.toDatabaseTask(): DatabaseTask {
     )
 }
 
+internal fun Task.toDatabaseTaskWithId(): DatabaseTask {
+    return DatabaseTask(
+        id = this.id,
+        text = this.text,
+        importance = this.importance.toDatabaseImportance(),
+        executed = this.executed,
+        dateOfCreation = this.dateOfCreation,
+        dateOfModified = this.dateOfModified,
+        deadline = this.deadline
+    )
+}
+
 private fun DatabaseImportance.toImportance(): Importance = when (this) {
     DatabaseImportance.LOW -> Importance.LOW
     DatabaseImportance.MEDIUM -> Importance.MEDIUM

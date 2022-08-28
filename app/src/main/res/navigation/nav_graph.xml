@@ -32,7 +32,6 @@
         <argument
             android:name="task"
             app:argType="com.todoapplication.domain.models.Task"
-            app:nullable="true"
-            android:defaultValue="@null" />
+            app:nullable="true" />
     </fragment>
 </navigation>

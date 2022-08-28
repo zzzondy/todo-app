@@ -5,6 +5,8 @@
     <string name="to_buy">To buy</string>
     <string name="profile">Profile</string>
     <string name="no_tasks">No scheduled</string>
+    <string name="add_task">Add task</string>
+    <string name="edit_task">Edit task</string>
 
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam leo mi, interdum id mauris vitae, posuere mollis justo. Ut sit amet leo metus. Vivamus eget ultrices neque. Duis finibus tincidunt commodo. Ut venenatis blandit massa eget malesuada. Duis molestie nisi ut auctor blandit. Suspendisse felis est, elementum in elementum sit amet, iaculis in ex. Nulla efficitur a sapien eget placerat.
 
@@ -18,4 +20,30 @@ Nullam sagittis urna purus, nec consectetur dui feugiat nec. Cras et blandit lec
 
 Donec lorem nulla, hendrerit eget erat cursus, varius aliquet ante. Mauris lorem orci, mollis id tellus vel, semper scelerisque nunc. Nullam consequat.</string>
     <string name="info_button">Info Button</string>
+    <string name="save">Save</string>
+    <string name="something_to_do">Something to do..</string>
+    <string name="required">Required</string>
+    <string name="importance">Importance</string>
+    <string name="low">Low</string>
+    <string name="finish_until">Finish until</string>
+    <string name="january">january</string>
+    <string name="february">february</string>
+    <string name="march">march</string>
+    <string name="april">april</string>
+    <string name="may">may</string>
+    <string name="june">june</string>
+    <string name="july">july</string>
+    <string name="august">august</string>
+    <string name="september">september</string>
+    <string name="october">october</string>
+    <string name="november">november</string>
+    <string name="december">december</string>
+    <string name="delete">Delete</string>
+    <string name="medium">Medium</string>
+    <string name="high">High</string>
+    <string-array name="importance">
+        <item>Low</item>
+        <item>Medium</item>
+        <item>High</item>
+    </string-array>
 </resources>

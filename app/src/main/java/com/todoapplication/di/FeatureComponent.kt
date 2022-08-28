@@ -1,5 +1,6 @@
 package com.todoapplication.di
 
+import com.todoapplication.di.fragmentComponents.AddEditTaskFragmentComponent
 import com.todoapplication.di.fragmentComponents.TodoListFragmentComponent
 import dagger.Subcomponent
 import javax.inject.Scope
@@ -9,6 +10,8 @@ import javax.inject.Scope
 interface FeatureComponent {
 
     fun todoListFragmentComponent(): TodoListFragmentComponent.Factory
+
+    fun addEditTaskFragmentComponent(): AddEditTaskFragmentComponent.Factory
 
     @Subcomponent.Factory
     interface Factory {

@@ -1,24 +1,23 @@
 package com.todoapplication.presentation.fragments.todoList.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.todoapplication.databinding.TaskItemLayoutBinding
 import com.todoapplication.domain.models.Task
+import com.todoapplication.presentation.fragments.todoList.TodoListFragmentInterface
 
-class TaskListAdapter : ListAdapter<Task, TaskItemViewHolder>(TaskListDiffCallback()) {
+class TaskListAdapter(private val todoListFragmentInterface: TodoListFragmentInterface) : ListAdapter<Task, TaskItemViewHolder>(TaskListDiffCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskItemViewHolder {
         val itemBinding =
             TaskItemLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        Log.println(Log.ASSERT, "data", "fdsfsfs")
         return TaskItemViewHolder(itemBinding)
     }
 
     override fun onBindViewHolder(holder: TaskItemViewHolder, position: Int) {
         val task = getItem(position)
-        holder.bind(task)
+        holder.bind(task, todoListFragmentInterface)
     }
 }
 

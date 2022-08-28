@@ -3,7 +3,6 @@ package com.todoapplication.presentation.fragments.todoList
 import android.util.Log
 import androidx.lifecycle.*
 import com.todoapplication.di.fragmentComponents.TodoListFragmentScope
-import com.todoapplication.domain.models.Importance
 import com.todoapplication.domain.models.Task
 import com.todoapplication.domain.usecase.GetUnExecutedTasksUseCase
 import com.todoapplication.domain.usecase.SetTaskExecutedByIdUseCase
@@ -21,15 +20,10 @@ class TodoListViewModel(
 
     fun getUnExecutedTasks() {
         viewModelScope.launch(Dispatchers.IO) {
-            val taskList = listOf(
-                Task(1, "asdadsadad", Importance.LOW, false, 10000, 10000),
-                Task(1, "asdadsadad", Importance.LOW, false, 10000, 10000)
-            )
+            val taskList = getUnExecutedTasksUseCase.execute()
             withContext(Dispatchers.Main) {
                 _todoList.value = taskList
             }
-
-            Log.println(Log.ASSERT, "Tasklist", todoList.value.toString())
         }
     }
 }

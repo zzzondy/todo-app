@@ -15,10 +15,11 @@ import com.todoapplication.MainActivity
 import com.todoapplication.R
 import com.todoapplication.databinding.FragmentTodoListBinding
 import com.todoapplication.di.fragmentComponents.TodoListFragmentComponent
+import com.todoapplication.domain.models.Task
 import com.todoapplication.presentation.fragments.todoList.adapter.TaskListAdapter
 import javax.inject.Inject
 
-class TodoListFragment : Fragment() {
+class TodoListFragment : Fragment(), TodoListFragmentInterface {
 
     private var _binding: FragmentTodoListBinding? = null
     private val binding: FragmentTodoListBinding get() = _binding!!
@@ -65,7 +66,7 @@ class TodoListFragment : Fragment() {
     }
 
     private fun configureTaskList() {
-        binding.taskList.adapter = TaskListAdapter()
+        binding.taskList.adapter = TaskListAdapter(this)
 
         val divider = MaterialDividerItemDecoration(requireContext(), LinearLayoutManager.VERTICAL)
         divider.isLastItemDecorated = false
@@ -74,6 +75,14 @@ class TodoListFragment : Fragment() {
     }
 
     fun openAddTaskFragment() {
-        navController.navigate(R.id.action_navigation_todoListFragment_to_addEditTaskFragment)
+        val action =
+            TodoListFragmentDirections.actionNavigationTodoListFragmentToAddEditTaskFragment(null)
+        navController.navigate(action)
+    }
+
+    override fun openEditTaskFragment(task: Task) {
+        val action =
+            TodoListFragmentDirections.actionNavigationTodoListFragmentToAddEditTaskFragment(task)
+        navController.navigate(action)
     }
 }
