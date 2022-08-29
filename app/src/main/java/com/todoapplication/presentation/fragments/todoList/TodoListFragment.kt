@@ -1,6 +1,7 @@
 package com.todoapplication.presentation.fragments.todoList
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,8 +10,11 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.divider.MaterialDividerItemDecoration
+import com.google.android.material.snackbar.Snackbar
 import com.todoapplication.MainActivity
 import com.todoapplication.R
 import com.todoapplication.databinding.FragmentTodoListBinding
@@ -57,12 +61,18 @@ class TodoListFragment : Fragment(), TodoListFragmentInterface {
         navController = findNavController()
         configureTaskList()
 
+
         viewModel.getUnExecutedTasks()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        viewModel.onClear()
     }
 
     private fun configureTaskList() {
@@ -72,6 +82,46 @@ class TodoListFragment : Fragment(), TodoListFragmentInterface {
         divider.isLastItemDecorated = false
         divider.dividerThickness = 2
         binding.taskList.addItemDecoration(divider)
+
+        getSwipeListenerToTaskList().attachToRecyclerView(binding.taskList)
+    }
+
+    private fun getSwipeListenerToTaskList(): ItemTouchHelper {
+        val simpleSwipeCallback = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ): Boolean {
+                return false
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val position = viewHolder.adapterPosition
+                when (direction) {
+                    ItemTouchHelper.LEFT -> {
+                        val adapter = binding.taskList.adapter as TaskListAdapter
+                        val deletedTask = adapter.getItem(position)
+                        viewModel.deleteTask(deletedTask)
+                        adapter.deleteItem(position)
+
+                        Snackbar.make(
+                            binding.taskList,
+                            "${getString(R.string.deleted_task)} ${deletedTask.text}",
+                            Snackbar.LENGTH_LONG
+                        )
+                            .apply {
+                                setAction(R.string.undo) {
+                                    viewModel.undoDeletingTask(deletedTask)
+                                }
+                                show()
+                            }
+
+                    }
+                }
+            }
+        }
+        return ItemTouchHelper(simpleSwipeCallback)
     }
 
     fun openAddTaskFragment() {
@@ -84,5 +134,13 @@ class TodoListFragment : Fragment(), TodoListFragmentInterface {
         val action =
             TodoListFragmentDirections.actionNavigationTodoListFragmentToAddEditTaskFragment(task)
         navController.navigate(action)
+    }
+
+    override fun setTaskExecuted(task: Task) {
+        viewModel.setTaskExecuted(task)
+    }
+
+    override fun setTaskUnExecuted(task: Task) {
+        viewModel.setTaskUnExecuted(task)
     }
 }

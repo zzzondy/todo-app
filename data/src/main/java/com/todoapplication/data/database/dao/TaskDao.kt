@@ -33,4 +33,7 @@ interface TaskDao {
         dateOfModified: Long,
         deadline: Long?
     )
+
+    @Insert
+    fun undoDeletingTask(task: DatabaseTask): Long
 }

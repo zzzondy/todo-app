@@ -13,7 +13,9 @@ import com.todoapplication.domain.models.Task
 import com.todoapplication.domain.usecase.AddTaskUseCase
 import com.todoapplication.domain.usecase.DeleteTaskByIdUseCase
 import com.todoapplication.domain.usecase.EditTaskUseCase
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import java.util.*
 import javax.inject.Inject
@@ -48,6 +50,8 @@ class AddEditTaskViewModel(
     val deadlineState: LiveData<Boolean> = Transformations.map(deadline) { data ->
         data.isNotEmpty()
     }
+
+    private val coroutineScope = CoroutineScope(Dispatchers.IO + Job())
 
     init {
         if (task != null) {
@@ -88,6 +92,8 @@ class AddEditTaskViewModel(
                 }
                 _deadlineInMillis.value = calendar.timeInMillis
             }
+        if (_deadlineInMillis.value != null)
+            calendar.timeInMillis = _deadlineInMillis.value!!
         val dialog = DatePickerDialog(
             context,
             datePickerListener,
@@ -96,7 +102,8 @@ class AddEditTaskViewModel(
             calendar.get(Calendar.DAY_OF_MONTH)
         )
         dialog.setOnCancelListener {
-            _deadlineInMillis.value = null
+            if (_deadlineInMillis.value == null)
+                _deadlineInMillis.value = null
         }
         dialog.show()
     }
@@ -132,7 +139,7 @@ class AddEditTaskViewModel(
     }
 
     fun deleteTask() {
-        viewModelScope.launch(Dispatchers.IO) {
+        coroutineScope.launch(Dispatchers.IO) {
             if (task != null) {
                 deleteTaskUseCase.execute(task.id)
             }
@@ -140,13 +147,13 @@ class AddEditTaskViewModel(
     }
 
     private fun addTask(task: Task) {
-        viewModelScope.launch(Dispatchers.IO) {
+        coroutineScope.launch(Dispatchers.IO) {
             addTaskUseCase.execute(task)
         }
     }
 
     private fun editTask(task: Task) {
-        viewModelScope.launch(Dispatchers.IO) {
+        coroutineScope.launch(Dispatchers.IO) {
             editTaskUseCase.execute(task)
         }
     }

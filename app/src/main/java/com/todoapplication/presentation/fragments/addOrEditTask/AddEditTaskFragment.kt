@@ -137,7 +137,7 @@ class AddEditTaskFragment : Fragment() {
                     }
                 )
             }
-            Thread.sleep(100)
+//            Thread.sleep(200)
             goBackToStack()
         }
     }

@@ -30,4 +30,8 @@ class TaskDatabaseRepositoryImpl(private val database: TaskDatabase) : TaskDatab
             task.deadline
         )
     }
+
+    override suspend fun undoDeletingTask(task: DatabaseTask) {
+        database.taskDao.undoDeletingTask(task)
+    }
 }

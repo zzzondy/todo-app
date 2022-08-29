@@ -13,5 +13,11 @@ class TaskItemViewHolder(private val itemBinding: TaskItemLayoutBinding) :
         itemBinding.root.setOnClickListener {
             todoListFragmentInterface.openEditTaskFragment(task)
         }
+        itemBinding.taskCheckbox.setOnCheckedChangeListener { _, checked ->
+            if (checked)
+                todoListFragmentInterface.setTaskExecuted(task)
+            else
+                todoListFragmentInterface.setTaskUnExecuted(task)
+        }
     }
 }

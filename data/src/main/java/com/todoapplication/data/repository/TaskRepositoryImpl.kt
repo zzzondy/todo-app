@@ -29,4 +29,8 @@ class TaskRepositoryImpl(private val taskDatabaseRepository: TaskDatabaseReposit
     override suspend fun editTask(task: Task) {
         taskDatabaseRepository.editTask(task.toDatabaseTaskWithId())
     }
+
+    override suspend fun undoDeletingTask(task: Task) {
+        taskDatabaseRepository.undoDeletingTask(task.toDatabaseTaskWithId())
+    }
 }

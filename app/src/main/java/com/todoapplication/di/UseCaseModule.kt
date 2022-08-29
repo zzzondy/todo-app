@@ -32,4 +32,9 @@ class UseCaseModule {
     @Provides
     fun provideSetTaskExecutedUseCase(taskRepository: TaskRepository): SetTaskExecutedByIdUseCase =
         SetTaskExecutedByIdUseCase(taskRepository)
+
+    @FeatureScope
+    @Provides
+    fun provideUndoDeletingTaskUseCase(taskRepository: TaskRepository): UndoDeletingTaskUseCase =
+        UndoDeletingTaskUseCase(taskRepository)
 }
